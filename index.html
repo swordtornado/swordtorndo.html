@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="hi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>शुभ मकर संक्रांति — Wishes</title>
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;700&family=Montserrat:wght@300;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <meta name="description" content="शुभ मकर संक्रांति — Send warm wishes with animated kites and confetti" />
+</head>
+<body>
+  <canvas id="confetti-canvas"></canvas>
+
+  <header class="site-header">
+    <div class="logo">🎋</div>
+    <h1>शुभ मकर संक्रांति</h1>
+    <p class="subtitle">गंग के तट पर खुशियाँ, आपके जीवन में उजियाला — भेजें खास शुभकामनाएँ</p>
+  </header>
+
+  <main class="container">
+    <section class="left">
+      <!-- Animated kite SVG -->
+      <div class="kite-wrap" aria-hidden="true">
+        <svg class="kite" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="g1" x1="0" x2="1">
+              <stop offset="0" stop-color="#ff9a9e"/>
+              <stop offset="1" stop-color="#fad0c4"/>
+            </linearGradient>
+          </defs>
+          <g transform="translate(100,100)">
+            <polygon class="kite-body" points="0,-60 45,0 0,60 -45,0" fill="url(#g1)" stroke="#a33" stroke-width="2"></polygon>
+            <line x1="0" y1="60" x2="0" y2="120" stroke="#6b4" stroke-width="2" stroke-linecap="round"></line>
+            <g class="tails" fill="#ff7">
+              <circle cx="0" cy="84" r="6"></circle>
+              <circle cx="0" cy="100" r="5"></circle>
+              <circle cx="0" cy="116" r="4"></circle>
+            </g>
+          </g>
+        </svg>
+      </div>
+
+      <div class="greeting-card">
+        <h2 id="preview-title">आपको मकर संक्रांति की हार्दिक शुभकामनाएँ</h2>
+        <p id="preview-msg">यह पर्व आपके जीवन में खुशियाँ और समृद्धि लाए।</p>
+
+        <div class="actions">
+          <button id="confetti-btn" class="btn primary">🎉 Confetti भेजें</button>
+          <button id="share-btn" class="btn">🔗 लिंक कॉपी करें</button>
+          <a id="mailto-btn" class="btn" target="_blank" rel="noopener">✉️ ईमेल से भेजें</a>
+        </div>
+      </div>
+    </section>
+
+    <aside class="right">
+      <form id="wish-form" class="wish-form" autocomplete="off">
+        <label>
+          किसको भेजना है? (Name)
+          <input id="to" name="to" placeholder="नाम लिखें — जैसे: प्रिय दोस्त" maxlength="60">
+        </label>
+
+        <label>
+          आपका संदेश
+          <textarea id="msg" name="msg" rows="4" placeholder="अपना प्यारा संदेश लिखें..." maxlength="300"></textarea>
+        </label>
+
+        <label>
+          थीम रंग
+          <input id="color" type="color" value="#ff9a9e" title="Choose theme color">
+        </label>
+
+        <div class="form-actions">
+          <button type="submit" class="btn primary">Preview बनाएं</button>
+          <button id="reset-btn" type="button" class="btn">Reset</button>
+        </div>
+
+        <small class="note">Preview बनने के बाद "लिंक कॉपी करें" से किसी को भेजें।</small>
+      </form>
+
+      <div class="credit">
+        Template by You — Customize freely.
+      </div>
+    </aside>
+  </main>
+
+  <footer class="site-footer">
+    © <span id="year"></span> शुभ मकर संक्रांति — बनाइए और साझा कीजिए
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
